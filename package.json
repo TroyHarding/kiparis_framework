@@ -1,0 +1,20 @@
+{
+  "name": "kiparis_framework",
+  "version": "13.3.2",
+  "description": "Cypress Framework Latest version (13.3.2)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ozzy Inatullaev",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.4",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.3.2",
+    "ts-loader": "^9.4.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js"
+  }
+}
