@@ -8,7 +8,7 @@ import {
 //import { And } from "@badeball/cypress-cucumber-preprocessor";
 
 Given(`I open url {string}`, (url) => {
-  cy.visit(url);
+  cy.visit(url).debug;
 });
 
 Given(`I resize window to {int} and {int}"`, (width, height) => {
@@ -41,9 +41,9 @@ Then(`element with selector {string} should be present`, (selector) => {
 
 Then(`element with xpath {string} should NOT be present`, (xpath) => {});
 
-Then(`I wait for element with xpath {string} to be present`, (xpath) => {});
+Then(`I wait for element with selector {string} to be present`, (xpath) => {});
 
-Then(`I wait for element with xpath {string} to NOT be present`, (xpath) => {});
+Then(`I wait for element with selector {string} to NOT be present`, (xpath) => {});
 
 //Type
 When(`I type {string} into element with selector {string}`, (text, selector) => {
@@ -53,7 +53,7 @@ When(`I type {string} into element with selector {string}`, (text, selector) => 
 
 //Click
 When(`I click on element with selector {string}`, (selector) => {
-  cy.get(selector).click;
+  cy.get(selector).click();
 });
 
 //title
@@ -66,13 +66,11 @@ Then(`I take a screenshot`, () => {
   cy.screenshot();
 });
 
-Then(
-  `element with xpath {string} should contain text {string}`,
-  (xpath, text) => {}
-);
+Then(`element with selector {string} should contain text {string}`, (selector, text) => {
+  cy.get(selector).contains(text).should("exist");
+});
 
-Then(
-  `element with xpath {string} should NOT contain text {string}`,
+Then(`element with xpath {string} should NOT contain text {string}`,
   (xpath, text) => {}
 );
 
