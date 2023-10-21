@@ -5,10 +5,10 @@ import {
   Then,
   And,
 } from "@badeball/cypress-cucumber-preprocessor";
-//import { And } from "@badeball/cypress-cucumber-preprocessor";
+import 'cypress-iframe'
 
 Given(`I open url {string}`, (url) => {
-  cy.visit(url).debug;
+  cy.visit(url);
 });
 
 Given(`I resize window to {int} and {int}"`, (width, height) => {
@@ -41,8 +41,8 @@ Then(`element with selector {string} should be present`, (selector) => {
 
 Then(`element with xpath {string} should NOT be present`, (xpath) => {});
 
-Then(`I wait for element with selector {string} to be present`, (xpath) => {
-  cy.get(selector).should("be.present");
+Then(`I wait for element with selector {string} to be present`, (selector) => {
+  cy.get(selector).should("be.visible");
 });
 
 Then(
@@ -89,14 +89,14 @@ Then(
   (xpath, text) => {}
 );
 
-// Then(`I swith to iframe with selector {string}`, (selector) => {
-//   cy.iframe(selector)
-// });
+Given(`I verify iframe with selector {string} has loaded`, (selector) => {
+  cy.frameLoaded('#Your\ project\:\ \'Test\ Project\'');
+});
 
 Then(
   `I search within iframe {string} with a selector {string} to find text {string}`,
   (ifrmae, selector, text) => {
-    cy.iframe(ifrmae).get(selector).should("eq", text);
+    cy.iframe(ifrmae).find(selector).should("eq", text);
   }
 );
 
