@@ -41,15 +41,22 @@ Then(`element with selector {string} should be present`, (selector) => {
 
 Then(`element with xpath {string} should NOT be present`, (xpath) => {});
 
-Then(`I wait for element with selector {string} to be present`, (xpath) => {});
+Then(`I wait for element with selector {string} to be present`, (xpath) => {
+  cy.get(selector).should("be.present");
+});
 
-Then(`I wait for element with selector {string} to NOT be present`, (xpath) => {});
+Then(
+  `I wait for element with selector {string} to NOT be present`,
+  (xpath) => {}
+);
 
 //Type
-When(`I type {string} into element with selector {string}`, (text, selector) => {
-  cy.get(selector).type(text);
-
-});
+When(
+  `I type {string} into element with selector {string}`,
+  (text, selector) => {
+    cy.get(selector).type(text);
+  }
+);
 
 //Click
 When(`I click on element with selector {string}`, (selector) => {
@@ -61,20 +68,37 @@ Then(`I should see page title as {string}`, (title) => {
   cy.title().should("eq", title);
 });
 
+Then(`I should see page title contains {string}`, (title) => {
+  cy.title().should("include", title);
+});
+
 //Screenshot Window
 Then(`I take a screenshot`, () => {
   cy.screenshot();
 });
 
-Then(`element with selector {string} should contain text {string}`, (selector, text) => {
-  cy.get(selector).contains(text).should("exist");
-});
+Then(
+  `element with selector {string} should contain text {string}`,
+  (selector, text) => {
+    cy.get(selector).contains(text).should("exist");
+  }
+);
 
-Then(`element with xpath {string} should NOT contain text {string}`,
+Then(
+  `element with xpath {string} should NOT contain text {string}`,
   (xpath, text) => {}
 );
 
-Then(`I swith to iframe with xpath {string}`, (xpath) => {});
+// Then(`I swith to iframe with selector {string}`, (selector) => {
+//   cy.iframe(selector)
+// });
+
+Then(
+  `I search within iframe {string} with a selector {string} to find text {string}`,
+  (ifrmae, selector, text) => {
+    cy.iframe(ifrmae).get(selector).should("eq", text);
+  }
+);
 
 Then(`I swith to default content`, () => {});
 

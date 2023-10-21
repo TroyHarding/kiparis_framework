@@ -1,6 +1,7 @@
+@smoke
 Feature: Smoke steps
 
-  #Done
+  @smoke1
   Scenario: Predefined steps for Google
     Given I open url "https://google.com"
     Then I should see page title as "Google"
@@ -11,6 +12,7 @@ Feature: Smoke steps
     Then element with selector "#gsr" should contain text "Cucumber"
 
   #Stuck because of Http
+  #@smoke2
   # Scenario: Quote Page Required Pages
   #   Given I open url "http://quote-qa.portnov.com/"
   #   Then I should see page title as "Get a Quote"
@@ -23,7 +25,7 @@ Feature: Smoke steps
   #   Then element with selector "Submitted Application" should contain text "Submitted Application"
 
 
-  #Done
+  @smoke3
   Scenario: Wikipedia
     Given I open url "https://www.wikipedia.org/"
     Then I should see page title as "Wikipedia"
