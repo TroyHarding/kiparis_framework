@@ -1,10 +1,10 @@
 {
   "name": "kiparis_framework",
   "version": "13.3.2",
-  "description": "Cypress Framework Latest version (13.3.2)",
+  "description": "Cypress Framework Latest version (13.3.3)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "reports": "node cucumber-html-report.js",
     "smoke-headed": "cypress run --env tags='@smoke' --headed",
     "smoke-headless": "cypress run --env tags='@smoke'",
     "predefined-headed": "cypress run --env tags='@predefined' --headed",
@@ -17,7 +17,7 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cucumber-html-reporter": "^6.0.0",
     "cucumber-json-report-formatter": "^0.1.4",
-    "cypress": "^13.3.2",
+    "cypress": "^13.3.3",
     "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
     "cypress-iframe": "^1.0.1",
     "ts-loader": "^9.4.1",

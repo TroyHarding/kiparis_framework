@@ -7,7 +7,10 @@ export default defineConfig({
   //FULL HD View
   viewportWidth: 1280,
   viewportHeight: 720,
+  //Cleans up Downloads,Screenshots and Videos (Not reports)
   trashAssetsBeforeRuns: true,
+  //If you want video
+  // video: true,
   e2e: {
     numTestsKeptInMemory: 10,
     specPattern: "**/*.feature",
