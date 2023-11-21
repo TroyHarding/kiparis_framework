@@ -29,16 +29,16 @@
     "omitFiltered": true,
     "html": {
       "enabled": true,
-      "output": "cypress/reports/cucumber/cucumber-html/-report.html"
+      "output": "cypress/reports/cucumber/cucumber-html/cucumber-report.html"
     },
     "messages": {
       "enabled": true,
-      "output": "cypress/reports/cucumber/cucumber-ndjson/-report.ndjson"
+      "output": "cypress/reports/cucumber/cucumber-ndjson/cucumber-report.ndjson"
     },
     "json": {
       "enabled": true,
       "formatter": "cucumber-json-formatter",
-      "output": "cypress/reports/cucumber/cucumber-json/-report.json"
+      "output": "cypress/reports/cucumber/cucumber-json/cucumber-report.json"
     }
   }
 }
