@@ -17,14 +17,14 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cucumber-html-reporter": "^6.0.0",
     "cucumber-json-report-formatter": "^0.1.4",
-    "cypress": "^13.3.3",
+    "cypress": "^13.9.0",
     "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
     "cypress-iframe": "^1.0.1",
     "ts-loader": "^9.4.1",
     "uuid": "^9.0.1"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "stepDefinitions": "cypress/support/step_definitions/*.js",
     "filterSpecs": true,
     "omitFiltered": true,
     "html": {
@@ -40,5 +40,9 @@
       "formatter": "cucumber-json-formatter",
       "output": "cypress/reports/cucumber/cucumber-json/cucumber-report.json"
     }
+  },
+  "dependencies": {
+    "g": "^2.0.1",
+    "npx": "^10.2.2"
   }
 }

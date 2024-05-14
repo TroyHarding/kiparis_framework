@@ -5,14 +5,15 @@ import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild
 
 export default defineConfig({
   //FULL HD View
-  viewportWidth: 1280,
-  viewportHeight: 720,
+  viewportWidth: 1920,
+  viewportHeight: 1080,
   //Cleans up Downloads,Screenshots and Videos (Not reports)
   trashAssetsBeforeRuns: true,
   //If you want video
   // video: true,
   e2e: {
     numTestsKeptInMemory: 10,
+    chromeWebSecurity: false,
     specPattern: "**/*.feature",
     async setupNodeEvents(
       on: Cypress.PluginEvents,
